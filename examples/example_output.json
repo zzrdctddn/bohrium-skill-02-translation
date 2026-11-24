@@ -1,0 +1,48 @@
+{
+  "case_id": "DEMO-NOT-A-REAL-CASE",
+  "status": "success",
+  "note": "示意输出，非真实案例结果；译文、原文位置与关系证据均为占位示意，不代表任何真实文献。",
+  "artifact": {
+    "source_language": "en",
+    "target_language": "zh",
+    "scope": "第2节全部段落（示意）",
+    "glossary": [
+      {"term": "representation learning", "translation": "表示学习", "scope": "本文方法中的表征学习范式", "source_location": "p.2 §2.1", "status": "locked"},
+      {"term": "i.e.", "translation": "即", "scope": "连接词", "source_location": "p.2", "status": "needs_confirmation"}
+    ],
+    "paragraphs": [
+      {
+        "para_id": "P001",
+        "source_text": "These representations are not necessarily unique.（示意）",
+        "source_location": {"page": 2, "column": "left", "paragraph": 1, "sentences": "1-2"},
+        "translated_text": "这些表示未必唯一。（示意译文）",
+        "translation_basis": "直译；术语按锁表，not necessarily 译为'未必'保留否定",
+        "status": "ok"
+      }
+    ]
+  },
+  "alignment_map": [
+    {"para_id": "P001", "source_location": {"page": 2, "paragraph": 1}, "target_index": 1, "continuation_of": null, "note": "段号一一对应"}
+  ],
+  "relation_checks": [
+    {"para_id": "P001", "relation_type": "negation", "source_evidence": "not necessarily", "target_evidence": "未必", "preserved": true, "note": "否定保留"},
+    {"para_id": "P001", "relation_type": "coreference", "source_evidence": "These representations", "target_evidence": "这些表示", "preserved": true, "note": "指代同一实体"}
+  ],
+  "glossary_lock_check": [
+    {"term": "representation learning", "expected": "表示学习", "occurrences": 4, "all_match": true, "mismatch_at": []}
+  ],
+  "verification_ledger": [
+    {"para_id": "P001", "translation_basis": "直译；术语按锁表", "checked_relations": ["negation", "coreference"], "issues": []}
+  ],
+  "uncertainties": ["i.e. 的译法待人工确认", "示例位置为占位，实际以真实原文为准"],
+  "human_review_items": ["确认 i.e. 在本文语境下的锁定译名"],
+  "change_log": [
+    {"step": 4, "action": "将 P003 的 not necessarily 从'必然'改为'未必'", "reason": "初版否定关系误译"}
+  ],
+  "self_check": {
+    "terms_locked": true,
+    "paragraphs_complete": true,
+    "relations_preserved": true,
+    "verifiable": true
+  }
+}
