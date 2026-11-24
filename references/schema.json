@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "glossary-locked-aligned-translator result.json",
+  "type": "object",
+  "required": ["case_id", "status", "artifact", "relation_checks", "self_check"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "status": { "enum": ["success", "partial", "blocked"] },
+    "artifact": {
+      "type": "object",
+      "required": ["source_language", "target_language", "scope", "glossary", "paragraphs"],
+      "properties": {
+        "source_language": { "type": "string" },
+        "target_language": { "type": "string" },
+        "scope": { "type": "string" },
+        "glossary": { "type": "array", "items": { "type": "object" } },
+        "paragraphs": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "alignment_map": { "type": "array", "items": { "type": "object" } },
+    "relation_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["para_id", "relation_type", "preserved"],
+        "properties": {
+          "para_id": { "type": "string" },
+          "relation_type": { "enum": ["coreference", "negation", "qualifier", "causality", "number_unit", "formula", "citation", "figure_table"] },
+          "source_evidence": { "type": "string" },
+          "target_evidence": { "type": "string" },
+          "preserved": { "type": "boolean" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "glossary_lock_check": { "type": "array", "items": { "type": "object" } },
+    "verification_ledger": { "type": "array", "items": { "type": "object" } },
+    "uncertainties": { "type": "array", "items": { "type": "string" } },
+    "human_review_items": { "type": "array", "items": { "type": "string" } },
+    "change_log": { "type": "array", "items": { "type": "object" } },
+    "self_check": {
+      "type": "object",
+      "required": ["terms_locked", "paragraphs_complete", "relations_preserved", "verifiable"],
+      "properties": {
+        "terms_locked": { "type": "boolean" },
+        "paragraphs_complete": { "type": "boolean" },
+        "relations_preserved": { "type": "boolean" },
+        "verifiable": { "type": "boolean" }
+      }
+    }
+  }
+}
