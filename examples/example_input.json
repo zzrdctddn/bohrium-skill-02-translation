@@ -1,0 +1,16 @@
+{
+  "case_id": "DEMO-NOT-A-REAL-CASE",
+  "note": "以下为演示接口的虚构示例，非官方测试案例，不构成正式答案。原文文本与位置均为占位示意。",
+  "task": "把这篇论文第2节译成中文，术语要统一，给出段落级双语对照，并核对否定/限定/数字单位/引用是否保真",
+  "params": {
+    "source_language": "en",
+    "target_language": "zh",
+    "scope": "第2节全部段落",
+    "glossary_provided": false,
+    "need_fields": ["glossary", "paragraphs", "alignment_map", "relation_checks"]
+  },
+  "materials": {
+    "pdf": "/input/materials/demo_paper.pdf",
+    "task_md": "/input/task.md"
+  }
+}
